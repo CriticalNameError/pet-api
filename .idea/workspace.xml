@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56ecb234-33cc-426d-ac0b-913283647db5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet_api/core/management/commands/wait_for_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/pet_api/core/management/commands/wait_for_db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet_api/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pet_api/core/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet_api/pet_logic/tests/test_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/pet_api/pet_logic/tests/test_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet_api/pet_logic/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/pet_api/pet_logic/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet_api/pet_logic/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pet_api/pet_logic/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,7 +22,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wait_for_db.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="wait_for_db.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pet_api/core/management/commands/wait_for_db.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="544">
@@ -52,12 +46,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="720">
-                <caret line="207" column="77" lean-forward="true" selection-start-line="207" selection-start-column="11" selection-end-line="207" selection-end-column="77" />
+              <first_editor relative-caret-position="533">
+                <caret line="175" lean-forward="true" selection-start-line="175" selection-end-line="175" />
               </first_editor>
               <second_editor />
             </state>
@@ -162,12 +156,12 @@
         <option value="$PROJECT_DIR$/pet_api/pet_api/urls.py" />
         <option value="$PROJECT_DIR$/pet_api/pet_logic/fixtures/test_fixture.json" />
         <option value="$PROJECT_DIR$/pet_api/pet_logic/serializers.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/pet_api/pet_logic/urls.py" />
         <option value="$PROJECT_DIR$/pet_api/pet_logic/views.py" />
         <option value="$PROJECT_DIR$/pet_api/pet_logic/tests/test_api.py" />
         <option value="$PROJECT_DIR$/pet_api/core/views.py" />
         <option value="$PROJECT_DIR$/pet_api/core/management/commands/wait_for_db.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -548,16 +542,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="720">
-            <caret line="207" column="77" lean-forward="true" selection-start-line="207" selection-start-column="11" selection-end-line="207" selection-end-column="77" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pet_api/pet_logic/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -595,6 +579,16 @@
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="533">
+            <caret line="175" lean-forward="true" selection-start-line="175" selection-end-line="175" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

@@ -154,19 +154,26 @@ class PetsApiTests(TestCase):
 ## Usage
 <h4>Spin up Services</h4>
 <h5>Requirement: Docker Tool such as Docker Desktop installed and running</h5>
+
 * Clone Repo
  * In Command Line navigate to your cloned repo: `<yourPath>`
  * Start built process:
+ 
  ```bash
  <yourPath>docker-compose build
  ```
+ 
 * Start Services:
+
  ```bash
  <yourPath>docker-compose up
 ```
+
 Services `db` and `pet_api` will start, `pet_api` will wait until connection
 to `db` is established
+
 * Wait for lines in command line response:
+
 ```bash
 System check identified no issues (0 silenced).
 pet_api_1  | <ServerTimeStamp>
