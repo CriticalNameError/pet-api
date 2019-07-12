@@ -50,3 +50,6 @@ services:
       - ./SQLModel.sql:/docker-entrypoint-initdb.d/SQLModel.sql
 
 
+
+
+

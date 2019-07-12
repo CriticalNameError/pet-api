@@ -17,7 +17,8 @@ class Command(BaseCommand):
                 connection.ensure_connection()
                 db_conn = True
             except OperationalError:
-                self.stdout.write("DATABASE UNAVAILABLE, try reconnect in 2 seconds...")
+                self.stdout.write\
+                    ("DATABASE UNAVAILABLE, try reconnect in 2 seconds...")
                 time.sleep(2)
 
         self.stdout.write(self.style.SUCCESS("DATABASE AVAILABLE! :-)"))
@@ -29,6 +30,6 @@ class Command(BaseCommand):
         print(tables)
         print('-------')
 
-        #print('Models available:\n')
-        #seen_models = conn_obj.introspection.installed_models(tables)
-        #print(seen_models)
+        # print('Models available:\n')
+        # seen_models = conn_obj.introspection.installed_models(tables)
+        # print(seen_models)

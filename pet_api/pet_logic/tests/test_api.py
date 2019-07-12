@@ -12,8 +12,11 @@ from pet_logic.serializers import PetsSerializer
 PETS_URL = reverse('pet_logic:pets-list')
 
 
-# Some helper functions
 
+
+
+# Some helper functions
+#
 def sample_pet(id=1):
     """Return a sample pet"""
     return Pets.objects.get(id=id)
@@ -27,16 +30,18 @@ def detail_url(pet_id):
 class PetsApiTests(TestCase):
     """Test pets API functionality"""
 
+    fixtures = ['test_fixture']
+
     def setUp(self):
         self.client = APIClient()
-        Pets.objects.create(id=1,name='Dog', species='Dog', gender='m', birthday='2015-01-01')
+        # Pets.objects.create(id=1,name='Dog', species='Dog', gender='m', birthday='2015-01-01')
 
     def test_listing_pets(self):
         """Test GET Request for retreiving list of pets"""
         res = self.client.get(PETS_URL)
 
         self.assertEqual(res.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(res.data), 1)
+        self.assertEqual(len(res.data), 7)
 
     def test_partial_update_pets(self):
         """Test updating a pet with patch"""

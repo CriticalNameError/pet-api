@@ -2,8 +2,8 @@ from django.db import models
 from pet_api import settings
 
 
-
 class Pets(models.Model):
+
     """Pet model to access via REST endpoint"""
     GENDER_CHOICES = (
         ('m', 'männlich'),
@@ -20,11 +20,9 @@ class Pets(models.Model):
     class Meta:
         db_table = "pets"
 
-
-
         if settings.IS_TESTING:
             managed = settings.IS_TESTING
-            print('Migrating pets for testing!')
+            print('Pets model set to "managed = True" for testing!')
         else:
             managed = False
-            print('Ignoring pets for production!')
+            print('Pets model set to "managed = False" for production!')

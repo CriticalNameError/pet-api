@@ -12,6 +12,6 @@ class PetsViewSet(viewsets.GenericViewSet,
                   mixins.ListModelMixin,
                   mixins.UpdateModelMixin,
                   mixins.RetrieveModelMixin):
-    """Manage tags in the database"""
+    """Manage pets in the database"""
     queryset = Pets.objects.all()
     serializer_class = serializers.PetsSerializer

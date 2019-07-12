@@ -87,7 +87,8 @@ DATABASES = {
         'PASSWORD': '12345',
         'HOST': 'db',
         'PORT': 3306,
-    }
+    },
+
 }
 
 
@@ -129,15 +130,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
 IS_TESTING = False
 
 if 'test' in sys.argv:
-    from .alt_settings import test
     IS_TESTING = True
     DATABASES['default'] = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'test_database.db'
     }
-
-
