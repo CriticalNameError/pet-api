@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56ecb234-33cc-426d-ac0b-913283647db5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet_api/core/management/commands/wait_for_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/pet_api/core/management/commands/wait_for_db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet_api/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/pet_api/core/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet_api/core/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet_api/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pet_api/core/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet_api/pet_api/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/pet_api/pet_api/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet_api/pet_api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/pet_api/pet_api/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet_api/pet_logic/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/pet_api/pet_logic/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet_api/pet_logic/tests/test_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/pet_api/pet_logic/tests/test_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet_api/pet_logic/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pet_api/pet_logic/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -73,8 +62,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="779">
-                <caret line="145" column="52" selection-start-line="145" selection-start-column="52" selection-end-line="145" selection-end-column="52" />
+              <first_editor relative-caret-position="408">
+                <caret line="39" column="99" selection-start-line="39" selection-start-column="99" selection-end-line="39" selection-end-column="99" />
               </first_editor>
               <second_editor />
             </state>
@@ -238,6 +227,13 @@
               <item name="pet-api" type="462c0819:PsiDirectoryNode" />
               <item name="pet_api" type="462c0819:PsiDirectoryNode" />
               <item name="pet_logic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pet-api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pet-api" type="462c0819:PsiDirectoryNode" />
+              <item name="pet_api" type="462c0819:PsiDirectoryNode" />
+              <item name="pet_logic" type="462c0819:PsiDirectoryNode" />
+              <item name="fixtures" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pet-api" type="b2602c69:ProjectViewProjectNode" />
@@ -603,8 +599,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="779">
-            <caret line="145" column="52" selection-start-line="145" selection-start-column="52" selection-end-line="145" selection-end-column="52" />
+          <first_editor relative-caret-position="408">
+            <caret line="39" column="99" selection-start-line="39" selection-start-column="99" selection-end-line="39" selection-end-column="99" />
           </first_editor>
           <second_editor />
         </state>

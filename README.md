@@ -24,25 +24,30 @@ Specify, implement and test a RESTful HTTP-Web-Service to list and update pet in
 
 
 * Frameworks:
-    * Django>=2.1.3,<2.2.0
-    * djangorestframework>=3.9.4,<3.10.0
+    * `Django>=2.1.3,<2.2.0`
+    * `djangorestframework>=3.9.4,<3.10.0`
     
 * Modules
-    * django-mysql==2.2.0
-    * mysqlclient==1.3.12
+    * `django-mysql==2.2.0`
+    * `mysqlclient==1.3.12`
     
 * Linting
-    * flake8>=3.6.0,<3.7.0
+    * `flake8>=3.6.0,<3.7.0`
+
+## Documentation
+Please find the API Documentation on Swagger:
+
+[Swagger API documentation](https://app.swaggerhub.com/apis-docs/CriticalNameError/pet-api/1.0.0#/)
 
 ## docker-compose
 **Services:**
 * pet_api:
     * djangorestframework-based REST-API-Service for managing pets model
     and providing endpoints for listing pets (GET-Request) and 
-    updating existing pets by id (PUT- and PATCH-Request)
+    updating existing pets by id (PUT- and PATCH-Request) running on `port 8000`
     
 * db:
-    * MySQL-based database-service. Provided dump is stored here 
+    * MySQL-based database-service running on `port 3306`. Provided dump is stored here 
     during docker image build using following statement in Dockerfile:
     
 ```bash 
@@ -52,7 +57,7 @@ COPY ./SQLModel.sql /docker-entrypoint-initdb.d/SQLModel.sql
 ## pet_api - service app structure
  <h4>core</h4>
     
-* Management of models, especially pets model defined in models.py as following:
+* Management of models, especially pets model defined in `models.py` as following:
  ```python
     class Pets(models.Model):
 
@@ -67,7 +72,7 @@ COPY ./SQLModel.sql /docker-entrypoint-initdb.d/SQLModel.sql
     birthday = models.DateField(blank=True)
 ```
 * Providing custom management command for waiting for database 
-connection under path management/commands/wait_for_db.py
+connection under path `management/commands/wait_for_db.py`
 
 ```python
  def handle(self, *args, **options):
@@ -86,7 +91,7 @@ connection under path management/commands/wait_for_db.py
 ```
  <h4>pet_logic</h4>
     
-* Defining logic for interaction with stored data using PetsSerializer in serializers.py 
+* Defining logic for interaction with stored data using PetsSerializer in `serializers.py`
  ```python
   class PetsSerializer(serializers.ModelSerializer):
     """Serializer for pets objects"""
@@ -99,7 +104,7 @@ connection under path management/commands/wait_for_db.py
 
 
    
-* Definitions for endpoints using ViewSets in views.py
+* Definitions for endpoints using ViewSets in `views.py`
  ```python
 class PetsViewSet(viewsets.GenericViewSet,
                   mixins.ListModelMixin,
@@ -111,7 +116,7 @@ class PetsViewSet(viewsets.GenericViewSet,
 ```
     
   
-* Unit tests in tests/test_api.py
+* Unit tests in `tests/test_api.py`
  ```python
 class PetsApiTests(TestCase):
     """Test pets API functionality"""
@@ -144,30 +149,81 @@ class PetsApiTests(TestCase):
         self.assertIn(pet.gender, payload['gender'])
 ```    
     
-    
-
-## Packages
-
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
-
-```bash
-pip install foobar
-```
+* Fixtures stored in `fixtures/test_fixture.json` containing provided dump for Django unit testing   
 
 ## Usage
-
-```python
-import foobar
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
+<h4>Spin up Services</h4>
+<h5>Requirement: Docker Tool such as Docker Desktop installed and running</h5>
+* Clone Repo
+ * In Command Line navigate to your cloned repo: `<yourPath>`
+ * Start built process:
+ ```bash
+ <yourPath>docker-compose build
+ ```
+* Start Services:
+ ```bash
+ <yourPath>docker-compose up
+```
+Services `db` and `pet_api` will start, `pet_api` will wait until connection
+to `db` is established
+* Wait for lines in command line response:
+```bash
+System check identified no issues (0 silenced).
+pet_api_1  | <ServerTimeStamp>
+pet_api_1  | Django version 2.1.10, using settings 'pet_api.settings'
+pet_api_1  | Starting development server at http://0.0.0.0:8000/
 ```
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Services `db` and `pet_api` will start, `pet_api` will wait until connection
+to `db` is established
+* Wait for  following lines in command line response:
+```bash
+System check identified no issues (0 silenced).
+pet_api_1  | <ServerTimeStamp>
+pet_api_1  | Django version 2.1.10, using settings 'pet_api.settings'
+pet_api_1  | Starting development server at http://0.0.0.0:8000/
+```
+* Check if it's working in Browser @ `http://localhost:8000/api/pets/`
+* Use browser frontend to test interactively if preferred. There are two endpoints active:
+    * GET on `http://localhost:8000/api/pets/`
+    * GET / PUT / PATCH on `http://localhost:8000/api/pets/<pet_id>`
 
-Please make sure to update tests as appropriate.
+See provided [Swagger API documentation](https://app.swaggerhub.com/apis-docs/CriticalNameError/pet-api/1.0.0#/).
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+
+<h4>Connect to MySQL db service directly </h4>
+<h5>Use MySQL Workbench or alternative</h5>
+Connect to service to inspect schema / process SQL scripts with connection:
+* Hostname: 127.0.0.1
+* Port: 3306
+* Username: root
+* Password: 12345
+
+You are up and running!
+<h4>Run Unit Tests</h4>
+* Run Unit Tests from `pet_logic/tests/` on provided fixture stored 
+in in-memory sqlite3 test database:
+Open **new Command Line Prompt** and type
+ ```bash
+ <yourPath>docker-compose run pet_api sh -c "python manage.py test"
+```
+* Response should look like this
+```bash
+Starting pet-api_db_1 ... done
+Pets model set to "managed = True" for testing!
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.082s
+
+OK
+Destroying test database for alias 'default'...
+```
+There is a machanism implemented to detect testing mode in order  to set Pets model to be managed.
+Otherwise migrations would not execute on sqlite test database.
+
+
+
+
+
