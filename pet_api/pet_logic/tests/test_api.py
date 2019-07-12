@@ -6,25 +6,22 @@ from rest_framework.test import APIClient
 
 from core.models import Pets
 
-from pet_logic.serializers import PetsSerializer
-
 
 PETS_URL = reverse('pet_logic:pets-list')
 
-
-
-
-
 # Some helper functions
-#
+
+
 def sample_pet(id=1):
     """Return a sample pet"""
     return Pets.objects.get(id=id)
+
 
 def detail_url(pet_id):
     """Return details url"""
     return reverse('pet_logic:pets-detail', args=[pet_id])
 
+# Test classes start here
 
 
 class PetsApiTests(TestCase):
@@ -34,7 +31,6 @@ class PetsApiTests(TestCase):
 
     def setUp(self):
         self.client = APIClient()
-        # Pets.objects.create(id=1,name='Dog', species='Dog', gender='m', birthday='2015-01-01')
 
     def test_listing_pets(self):
         """Test GET Request for retreiving list of pets"""
@@ -56,5 +52,3 @@ class PetsApiTests(TestCase):
         pet.refresh_from_db()
         self.assertIn(pet.name, payload['name'])
         self.assertIn(pet.gender, payload['gender'])
-
-

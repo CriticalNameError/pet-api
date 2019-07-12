@@ -200,12 +200,12 @@ Connect to service to inspect schema / process SQL scripts with connection:
 * Password: 12345
 
 You are up and running!
-<h4>Run Unit Tests</h4>
+<h4>Run Unit Tests and Linting</h4>
 * Run Unit Tests from `pet_logic/tests/` on provided fixture stored 
 in in-memory sqlite3 test database:
 Open **new Command Line Prompt** and type
  ```bash
- <yourPath>docker-compose run pet_api sh -c "python manage.py test"
+ <yourPath>docker-compose run pet_api sh -c "python manage.py test && flake8"
 ```
 * Response should look like this
 ```bash
