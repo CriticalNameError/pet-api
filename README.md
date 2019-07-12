@@ -184,12 +184,14 @@ pet_api_1  | Starting development server at http://0.0.0.0:8000/
 Services `db` and `pet_api` will start, `pet_api` will wait until connection
 to `db` is established
 * Wait for  following lines in command line response:
+
 ```bash
 System check identified no issues (0 silenced).
 pet_api_1  | <ServerTimeStamp>
 pet_api_1  | Django version 2.1.10, using settings 'pet_api.settings'
 pet_api_1  | Starting development server at http://0.0.0.0:8000/
 ```
+
 * Check if it's working in Browser @ `http://localhost:8000/api/pets/`
 * Use browser frontend to test interactively if preferred. There are two endpoints active:
     * GET on `http://localhost:8000/api/pets/`
@@ -201,6 +203,7 @@ See provided [Swagger API documentation](https://app.swaggerhub.com/apis-docs/Cr
 <h4>Connect to MySQL db service directly </h4>
 <h5>Use MySQL Workbench or alternative</h5>
 Connect to service to inspect schema / process SQL scripts with connection:
+
 * Hostname: 127.0.0.1
 * Port: 3306
 * Username: root
@@ -208,13 +211,17 @@ Connect to service to inspect schema / process SQL scripts with connection:
 
 You are up and running!
 <h4>Run Unit Tests and Linting</h4>
+
 * Run Unit Tests from `pet_logic/tests/` on provided fixture stored 
 in in-memory sqlite3 test database:
 Open **new Command Line Prompt** and type
+
  ```bash
  <yourPath>docker-compose run pet_api sh -c "python manage.py test && flake8"
 ```
+
 * Response should look like this
+
 ```bash
 Starting pet-api_db_1 ... done
 Pets model set to "managed = True" for testing!
@@ -227,6 +234,7 @@ Ran 2 tests in 0.082s
 OK
 Destroying test database for alias 'default'...
 ```
+
 There is a machanism implemented to detect testing mode in order  to set Pets model to be managed.
 Otherwise migrations would not execute on sqlite test database.
 
